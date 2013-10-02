@@ -4,18 +4,32 @@
 	<!--
 		Created by Kaspars Dambis
 		http://konstruktors.com
+
+		Modified for CODAME by Felipe Brahm
+		http://codame.com/team
 	-->
 	<meta charset="utf-8" />
 	<title>Metrogram</title>
 	<link rel="stylesheet" href="assets/style.css" />
 	<script src="assets/angular.min.js"></script>
 	<script src="assets/metrogram.js"></script>
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 </head>
 <body ng-controller="slideshow" ng-class="loadingClass">
-	<h1>
-		<img src="assets/instagram-logo.png" /> 
-		#<input type="text" ng-model="tag" ng-change="tagChange()" ng-init="tag = 'metronetlife'" size="{{ tag.length }}" />
-	</h1>
+
+	<div class="codame-logo">
+		<img src="assets/codame-logo.png" />
+	</div>
+
+	<div class="tag-input">
+		<h1>
+			<img src="assets/instagram-logo.png" />
+			#<input type="text" ng-model="tag" ng-change="tagChange()" ng-init="tag = 'codame'" size="{{ tag.length }}" />
+		</h1>
+		<div class="message">
+			Post a picture, tag it and watch it here. Live.
+		</div>
+	</div>
 
 	<ul id="slides">
 		<li ng-repeat="image in images" class="slide" ng-class="{ active : image.isActive }">
@@ -24,9 +38,6 @@
 			</figure>
 
 			<div class="meta">
-				<p class="qr">
-					<img ng-src="http://qrfree.kaywa.com/?s=8&amp;d={{ image.link | escape }}" />
-				<p>
 				<p class="caption">
 					<cite class="author">
 						<img ng-src="{{ image.user.profile_picture }}" width="40" height="40" /> 

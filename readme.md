@@ -9,3 +9,7 @@ I built Metrogram to learn more about the [AngularJS](http://angularjs.org/). Ju
 Created by **Kaspars Dambis**   
 [http://konstruktors.com](http://konstruktors.com)  
 [@konstruktors](http://twitter.com/konstruktors)
+
+Forked and Modified for CODAME by **Felipe Brahm**   
+[http://codame.com/team](http://codame.com/team)  
+[@felipebrahm](http://twitter.com/felipebrahm)
