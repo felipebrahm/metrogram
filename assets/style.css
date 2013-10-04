@@ -1,69 +1,104 @@
 /*
-	Created by Kaspars Dambis
-	http://konstruktors.com
+  Created by Kaspars Dambis
+  http://konstruktors.com
 
-	Modified for CODAME by Felipe Brahm
-	http://codame.com/team
+  Modified for CODAME by Felipe Brahm
+  http://codame.com/team
 */
 
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url('assets/open-sans.woff') format('woff');
+  src: local('Open Sans'), local('OpenSans'), url('open-sans.woff') format('woff');
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
-	font:18px/1.2; margin:0 auto; padding:0; height:100%; width:100%;
-	color: #fff;
-	text-shadow:0 1px 0 rgba(0,0,0,0.5);
-	background-color: #000;
-	background-image: url('codame-background.jpg');
+  font-family: 'Open Sans', sans-serif;
+  font:18px/1.2; margin:0 auto; padding:0; height:100%; width:100%;
+  color: #fff;
+  text-shadow:0 1px 0 rgba(0,0,0,0.5);
+  background-color: #000;
+  background-image: url('codame-background.jpg');
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#dialog {
+  position: absolute;
+  display: none;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(255,255,255,.9);
+  color: #333;
+  padding-top: 10%;
+}
+
+#dialog .subtitle {
+  font-weight: bold;
+}
+
+#dialog .explanation {
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .codame-logo {
-	position: absolute;
-	right: -40px;
-	bottom: -120px;
-	width: 400px;
-	height: 400px;
-	z-index: -1;
+  position: absolute;
+  right: -40px;
+  bottom: -120px;
+  width: 400px;
+  height: 400px;
+  z-index: -1;
 }
 
 .codame-logo img {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .tag-input {
-	margin-top: 40px;
-	margin-left: 50%;
-	z-index: 15;
-	text-align: center;
+  margin-top: 40px;
+  margin-left: 50%;
+  z-index: 15;
+  text-align: center;
 }
 
 .tag-input h1 {
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	color: #fff;
-	text-shadow: 0 -1px 0 #333;
-	font-size: 40px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-shadow: 0 -1px 0 #333;
+  font-size: 40px;
 }
 
 .tag-input .message {
-	margin-top: 10px;
-	font-size: 13px;
+  margin-top: 10px;
+  font-size: 13px;
 }
 
 .tag-input input {
-	font-size: 40px;
+  font-size: 40px;
 }
 
 .meta {
-	margin-top: 180px;
-	padding-right: 20px;
+  margin-top: 180px;
+  padding-right: 20px;
 }
 
 ul, li { margin:0; padding:0; list-style:none; display:block; }
