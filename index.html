@@ -1,64 +1,82 @@
 <!doctype html>
 <html ng-app="metrogram">
 <head>
-	<!--
-		Created by Kaspars Dambis
-		http://konstruktors.com
+  <!--
+    Created by Kaspars Dambis
+    http://konstruktors.com
 
-		Modified for CODAME by Felipe Brahm
-		http://codame.com/team
-	-->
-	<meta charset="utf-8" />
-	<title>Metrogram</title>
-	<link rel="stylesheet" href="assets/style.css" />
-	<script src="assets/angular.min.js"></script>
-	<script src="assets/metrogram.js"></script>
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    Modified for CODAME by Felipe Brahm
+    http://codame.com/team
+  -->
+  <meta charset="utf-8" />
+  <title>Metrogram</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="assets/angular.min.js"></script>
+  <script src="assets/metrogram.js"></script>
 </head>
 <body ng-controller="slideshow" ng-class="loadingClass">
 
-	<div class="codame-logo">
-		<img src="assets/codame-logo.png" />
-	</div>
+  <div id="dialog">
+    <div class="byob-logo">
+      <img src="assets/byob-logo.gif" />
+    </div>
+    <div class="explanation">
+      Do you have any project you want to show off?
+      <br />
+      Welcome to the BYOB (Bring Your Own Beamer) space.
+      <br />
+      Just plug in your projector and share.
+    </div>
+  </div>
 
-	<div class="tag-input">
-		<h1>
-			<img src="assets/instagram-logo.png" />
-			#<input type="text" ng-model="tag" ng-change="tagChange()" ng-init="tag = 'codame'" size="{{ tag.length }}" />
-		</h1>
-		<div class="message">
-			Post a picture, tag it and watch it here. Live.
-		</div>
-	</div>
+  <div class="wrapper">
 
-	<ul id="slides">
-		<li ng-repeat="image in images" class="slide" ng-class="{ active : image.isActive }">
-			<figure>
-				<img ng-src="{{ image.images.standard_resolution.url }}" class="image" />
-			</figure>
+    <div class="codame-logo">
+      <img src="assets/codame-logo.png" />
+    </div>
 
-			<div class="meta">
-				<p class="caption">
-					<cite class="author">
-						<img ng-src="{{ image.user.profile_picture }}" width="40" height="40" /> 
-						{{ image.user.username }}
-					</cite> 
-					{{ image.caption.text }}
-				</p>
-				<p class="likes">
-					&hearts; {{ image.likes.count }} likes
-				</p>
-				<ul class="comments">
-					<li class="comment" ng-repeat="comment in image.comments.data">
-						<cite class="author">
-							<img ng-src="{{ comment.from.profile_picture }}" width="40" height="40" /> 
-							{{ comment.from.username }}
-						</cite> 
-						{{ comment.text }}
-					</li>
-				</ul>
-			</div>
-		</li>
-	</ul>
+    <div class="tag-input">
+      <h1>
+        <img src="assets/instagram-logo.png" />
+        #<input type="text" ng-model="tag" ng-change="tagChange()" ng-init="tag = 'codame'" size="{{ tag.length }}" />
+      </h1>
+      <div class="message">
+        Post a picture, tag it and watch it here. Live.
+      </div>
+    </div>
+
+    <ul id="slides">
+      <li ng-repeat="image in images" class="slide" ng-class="{ active : image.isActive }">
+        <figure>
+          <img ng-src="{{ image.images.standard_resolution.url }}" class="image" />
+        </figure>
+
+        <div class="meta">
+          <p class="caption">
+            <cite class="author">
+              <img ng-src="{{ image.user.profile_picture }}" width="40" height="40" />
+              {{ image.user.username }}
+            </cite>
+            {{ image.caption.text }}
+          </p>
+          <p class="likes">
+            &hearts; {{ image.likes.count }} likes
+          </p>
+          <ul class="comments">
+            <li class="comment" ng-repeat="comment in image.comments.data">
+              <cite class="author">
+                <img ng-src="{{ comment.from.profile_picture }}" width="40" height="40" />
+                {{ comment.from.username }}
+              </cite>
+              {{ comment.text }}
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
 </body>
 </html>
